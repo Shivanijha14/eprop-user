@@ -54,7 +54,7 @@ export default function Home() {
   return (
     <main className="bg-background">
       {/* Hero Section */}
-      <HeroSection />
+      {/* <HeroSection /> */}
 
       {/* Pay Your Rent Section */}
       <PayYourRentSection />

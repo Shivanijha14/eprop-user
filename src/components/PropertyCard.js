@@ -43,12 +43,12 @@ export default function PropertyCard({ property }) {
               <FiHome size={48} />
             </div>
           )}
-          <div className="absolute top-3 left-3 bg-white px-2 py-1 rounded-full text-sm font-medium">
+          {/* <div className="absolute top-3 left-3 bg-white px-2 py-1 rounded-full text-sm font-medium">
             {getPropertyTypeIcon(property.propertyType)} {property.propertyType}
-          </div>
-          <div className="absolute top-3 right-3 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-bold">
+          </div> */}
+          {/* <div className="absolute top-3 right-3 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-bold">
             {formatPrice(property.price)}
-          </div>
+          </div> */}
         </div>
 
         {/* Property Details */}
@@ -90,13 +90,6 @@ export default function PropertyCard({ property }) {
           </div>
 
           {/* Owner Info */}
-          {property.user && (
-            <div className="mt-3 pt-3 border-t border-gray-100">
-              <p className="text-xs text-gray-500">
-                Listed by: <span className="font-medium">{property.user.name}</span>
-              </p>
-            </div>
-          )}
         </div>
       </div>
     </Link>

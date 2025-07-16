@@ -1,195 +1,155 @@
 'use client';
 
 import Link from 'next/link';
-import { FiHome, FiShoppingBag, FiMail, FiPhone, FiMapPin, FiFacebook, FiTwitter, FiInstagram, FiLinkedin } from 'react-icons/fi';
+import {
+  FiPhone,
+  FiMail,
+  FiMapPin,
+  FiFacebook,
+  FiTwitter,
+  FiInstagram,
+  FiLinkedin,
+} from 'react-icons/fi';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <FiHome className="text-blue-400 text-2xl" />
-              <h3 className="text-xl font-bold">EProperty</h3>
+    <footer className="bg-black text-white">
+      <div className="max-w-7xl mx-auto px-6 py-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 text-sm">
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-base font-semibold mb-4">Quick Links</h3>
+            <ul className="space-y-2 text-gray-300">
+              {[
+                'Apartments In Gurgaon',
+                'Apartments In Pune',
+                'Apartments In Navi Mumbai',
+                'Apartments In Noida',
+                'Apartments In Bangalore',
+                'Apartments In Hyderabad',
+                'Apartments In Delhi',
+                'Commercial Properties In Delhi',
+                'Commercial Properties In Noida',
+                'Commercial Properties In Gurgaon',
+                'Commercial Spaces In Pune',
+              ].map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Explore Used Items */}
+          <div>
+            <h3 className="text-base font-semibold mb-4">Explore Used Items</h3>
+            <ul className="space-y-2 text-gray-300">
+              <li>Used Fridge For Sale</li>
+              <li>Used Washing Machine For Sale</li>
+              <li>Used Mobile Phone For Sale</li>
+              <li>Used Laptops For Sale</li>
+              <li>Used Auto mobile For Sale</li>
+              <li>Used Furniture For Sale</li>
+              <li>Used Sofas For Sale</li>
+              <li>Explore All Used Items</li>
+            </ul>
+          </div>
+
+          {/* Queries */}
+          <div>
+            <h3 className="text-base font-semibold mb-4">Queries</h3>
+            <ul className="space-y-2 text-gray-300">
+              <li>Home Loan Queries</li>
+              <li>Personal Loan Queries</li>
+              <li>Home Construction Queries</li>
+              <li>Home Renovation Queries</li>
+              <li>Home Buy Queries</li>
+              <li>Home Sell Queries</li>
+              <li>NRI Real Estate Queries</li>
+              <li>Interior Design Queries</li>
+              <li>Interior Decor Queries</li>
+              <li>Broker Guide Qusries</li>
+            </ul>
+          </div>
+
+          {/* User Space */}
+          <div>
+            <h3 className="text-base font-semibold mb-4">User Space</h3>
+            <ul className="space-y-2 text-gray-300">
+              <li>My Account</li>
+              <li>My Properties</li>
+              <li>My Items For Sale</li>
+              <li>My Wallet</li>
+              <li>Transfer Rent</li>
+              <li>Help & Support Center</li>
+            </ul>
+          </div>
+
+          {/* Official */}
+          <div>
+            <h3 className="text-base font-semibold mb-4">Official</h3>
+            <ul className="space-y-2 text-gray-300">
+              <li>About Eproperty</li>
+              <li>Contact Us</li>
+              <li>FAQs</li>
+              <li>Refund Policy</li>
+              <li>Privacy Policy</li>
+              <li>Terms & Conditions</li>
+              <li>User Agreement</li>
+              <li>Media Centre</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div className="border-t border-gray-700 my-8"></div>
+
+        {/* Download + Contact Row */}
+        <div className="flex flex-col lg:flex-row justify-between gap-10 text-sm">
+          {/* Download App */}
+          <div className="space-y-3">
+            <p className="font-semibold">Download Our App</p>
+            <p className="text-gray-400">Available For All Devices</p>
+            <div className="flex gap-4">
+              <img
+                src="/assets/images/googleplay.png"
+                alt="Google Play"
+                className="h-10"
+              />
+              <img
+                src="/assets/images/appstore.png"
+                alt="App Store"
+                className="h-10"
+              />
             </div>
-            <p className="text-gray-300 text-sm leading-relaxed">
-              Your trusted platform for buying, selling, and renting properties. 
-              We connect property seekers with their dream homes and help sellers 
-              reach the right buyers.
+          </div>
+
+          {/* Contact */}
+          <div className="space-y-3">
+            <p className="font-semibold">Connect With Us</p>
+            <p>
+              Call Us: <span className="text-gray-300">+011-123456</span>
             </p>
-            <div className="flex space-x-4">
-              <a 
-                href="#" 
-                className="text-gray-400 hover:text-blue-400 transition-colors"
-                aria-label="Facebook"
-              >
-                <FiFacebook size={20} />
-              </a>
-              <a 
-                href="#" 
-                className="text-gray-400 hover:text-blue-400 transition-colors"
-                aria-label="Twitter"
-              >
-                <FiTwitter size={20} />
-              </a>
-              <a 
-                href="#" 
-                className="text-gray-400 hover:text-blue-400 transition-colors"
-                aria-label="Instagram"
-              >
-                <FiInstagram size={20} />
-              </a>
-              <a 
-                href="#" 
-                className="text-gray-400 hover:text-blue-400 transition-colors"
-                aria-label="LinkedIn"
-              >
-                <FiLinkedin size={20} />
-              </a>
-            </div>
-          </div>
-
-          {/* Properties Links */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Properties</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/properties" className="text-gray-300 hover:text-white transition-colors text-sm">
-                  Browse Properties
-                </Link>
-              </li>
-              <li>
-                <Link href="/properties/create" className="text-gray-300 hover:text-white transition-colors text-sm">
-                  List Your Property
-                </Link>
-              </li>
-              <li>
-                <Link href="/properties/my-properties" className="text-gray-300 hover:text-white transition-colors text-sm">
-                  My Properties
-                </Link>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors text-sm">
-                  Property Valuation
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors text-sm">
-                  Market Trends
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Items Links */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Marketplace</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/items" className="text-gray-300 hover:text-white transition-colors text-sm">
-                  Browse Items
-                </Link>
-              </li>
-              <li>
-                <Link href="/items/create" className="text-gray-300 hover:text-white transition-colors text-sm">
-                  Sell an Item
-                </Link>
-              </li>
-              <li>
-                <Link href="/items/my-items" className="text-gray-300 hover:text-white transition-colors text-sm">
-                  My Items
-                </Link>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors text-sm">
-                  Categories
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors text-sm">
-                  Selling Guide
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Contact Us</h3>
-            <div className="space-y-3">
-              <div className="flex items-center space-x-3">
-                <FiMapPin className="text-blue-400 flex-shrink-0" size={16} />
-                <span className="text-gray-300 text-sm">
-                  123 Property Street<br />
-                  Mumbai, Maharashtra 400001
-                </span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <FiPhone className="text-blue-400 flex-shrink-0" size={16} />
-                <a 
-                  href="tel:+919876543210" 
-                  className="text-gray-300 hover:text-white transition-colors text-sm"
-                >
-                  +91 98765 43210
-                </a>
-              </div>
-              <div className="flex items-center space-x-3">
-                <FiMail className="text-blue-400 flex-shrink-0" size={16} />
-                <a 
-                  href="mailto:support@eproperty.com" 
-                  className="text-gray-300 hover:text-white transition-colors text-sm"
-                >
-                  support@eproperty.com
-                </a>
-              </div>
-            </div>
-            
-            {/* Newsletter Signup */}
-            <div className="mt-6">
-              <h4 className="text-sm font-semibold mb-2">Stay Updated</h4>
-              <div className="flex">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-3 py-2 bg-gray-800 border border-gray-700 rounded-l-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                />
-                <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-r-md transition-colors text-sm font-medium">
-                  Subscribe
-                </button>
-              </div>
+            <p>
+              Write To Us: <span className="text-gray-300">connect@epropertylimited.com</span>
+            </p>
+            <p>
+              Visit Us: <span className="text-gray-300">A64, 3rd Floor, Sector 63, Noida, Uttar Pradesh, 201301</span>
+            </p>
+            <div className="flex gap-3 mt-2">
+              <FiFacebook className="text-gray-400 hover:text-white" />
+              <FiTwitter className="text-gray-400 hover:text-white" />
+              <FiInstagram className="text-gray-400 hover:text-white" />
+              <FiLinkedin className="text-gray-400 hover:text-white" />
             </div>
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="border-t border-gray-800 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-gray-400 text-sm">
-              © {currentYear} EProperty. All rights reserved.
-            </div>
-            
-            {/* Legal Links */}
-            <div className="flex flex-wrap justify-center md:justify-end space-x-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                Terms of Service
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                Cookie Policy
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                Help Center
-              </a>
-            </div>
-          </div>
+        {/* Copyright */}
+        <div className="text-center text-gray-500 text-xs mt-8 pt-4 border-t border-gray-700">
+          Copyright © {currentYear} By Eproperty. All Rights Reserved.
         </div>
       </div>
     </footer>
   );
-} 
+}
