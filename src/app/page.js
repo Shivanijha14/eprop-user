@@ -16,6 +16,10 @@ import TopOffersSection from '@/components/homepage/TopOffersSection';
 import MobileAppSection from '@/components/homepage/MobileAppSection';
 import AskQuotesSection from '@/components/homepage/AskQuotesSection';
 import SearchResultsSection from '@/components/homepage/SearchResultsSection';
+import ExploreUsedItems from '@/components/homepage/ExploreUsedItems';
+import TopCities from '@/components/homepage/TopCities';
+import AskQueriesSection from '@/components/homepage/AskQueriesSection';
+import MiscellaneousContentPage from '@/components/homepage/MiscellaneousContentPage';
 
 export default function Home() {
   const { user, searchTerm, filterType, loading } = useAppContext();
@@ -38,7 +42,7 @@ export default function Home() {
 
   const filteredProperties = properties.filter(property => {
     const matchesSearch = property.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         property.address.toLowerCase().includes(searchTerm.toLowerCase());
+      property.address.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesFilter = filterType === 'all' || property.propertyType === filterType;
     return matchesSearch && matchesFilter;
   });
@@ -68,22 +72,38 @@ export default function Home() {
       {/* Featured Properties */}
       <FeaturedPropertiesSection properties={properties} />
 
+
+      {/* Quick Pick Your Choice */}
+      <ExploreUsedItems />
+
       {/* List Your Property Section */}
       <ListPropertySection />
 
-      {/* Top Offers */}
-      <TopOffersSection properties={properties} />
+      {/* List Your Property Section */}
+      <TopCities />
 
       {/* Mobile App Section */}
       <MobileAppSection />
 
+      {/* Mobile App Section */}
+      <AskQueriesSection />
+
+      {/* Mobile App Section */}
+      <MiscellaneousContentPage />
+
+
+      {/* Top Offers */}
+      {/* <TopOffersSection properties={properties} /> */}
+
+
+
       {/* Ask Quotes Section */}
-      <AskQuotesSection />
+      {/* <AskQuotesSection /> */}
 
       {/* Search Results (when searching) */}
-      <SearchResultsSection 
-        searchTerm={searchTerm} 
-        filteredProperties={filteredProperties} 
+      <SearchResultsSection
+        searchTerm={searchTerm}
+        filteredProperties={filteredProperties}
       />
     </main>
   );

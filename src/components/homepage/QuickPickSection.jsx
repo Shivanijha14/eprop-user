@@ -25,15 +25,18 @@ export default function QuickPickSection() {
               key={index}
               className="group cursor-pointer transition-all duration-300 border rounded-lg bg-gray-50 hover:shadow-lg"
             >
-              <CardContent className="p-6 text-center space-y-4">
+              <CardContent className="p-6 text-left space-y-4">
                 <div className={`w-16 h-16 mx-auto rounded-full bg-gradient-to-r ${category.gradient} flex items-center justify-center text-2xl group-hover:scale-110 transition-transform`}>
                   {category.icon}
                 </div>
 
                 <div>
                   <CardTitle className="text-lg mb-2">{category.label}</CardTitle>
-                  <Badge variant="secondary">{category.count}</Badge>
+                  <Badge variant="secondary" className="text-lg mb-2 font-normal">
+                    {category.count} Properties
+                  </Badge>
                 </div>
+
 
                 <div className="pt-2">
                   <span className="inline-flex items-center text-green-600 text-sm font-medium hover:underline">
@@ -43,6 +46,14 @@ export default function QuickPickSection() {
               </CardContent>
             </Card>
           ))}
+        </div>
+        <div className="mt-12 flex justify-center">
+          <button
+            type="button"
+            className="px-6 py-3 bg-[#808000] text-white rounded-md font-semibold flex items-center space-x-2 hover:bg-[#6b6b00] transition-colors"
+          >
+            <span>View All</span> <FaArrowRight />
+          </button>
         </div>
       </div>
     </section>

@@ -112,12 +112,12 @@ export default function Footer() {
             <p className="text-gray-400">Available For All Devices</p>
             <div className="flex gap-4">
               <img
-                src="/assets/images/googleplay.png"
+                src="/assets/images/playstore.png"
                 alt="Google Play"
                 className="h-10"
               />
               <img
-                src="/assets/images/appstore.png"
+                src="/assets/images/appstore.jpg"
                 alt="App Store"
                 className="h-10"
               />
